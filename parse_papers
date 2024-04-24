@@ -1,11 +1,5 @@
 #!/bin/bash
-
-if [ "$#" != "1" ]; then
-  echo "Usage:" $0 "<application.conf>"
-  exit 1
-fi
-
-CONF=$1
-
-sbt -Dconfig.file=$CONF "runMain org.clulab.reach.RunReachCLI"
-
+# -Dconfig.file=application.conf \
+sbt \
+  -java-home "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home" \
+  "runMain org.clulab.reach.RunReachCLI"

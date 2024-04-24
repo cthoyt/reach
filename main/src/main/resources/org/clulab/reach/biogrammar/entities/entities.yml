@@ -264,6 +264,15 @@ rules:
     pattern: |
       [entity='B-Disease'] [entity='I-Disease']*
 
+  - name: ner-vaccine-entities
+    label: Vaccine
+    action: mkNERMentions
+    example: "DNA vaccine"
+    priority: 3
+    type: token
+    pattern: |                                                                  
+       [entity='B-Vaccine'] [entity='I-Vaccine']*  
+
   # TODO: Ideally, this should somehow be added to the KB
   - name: missing-simple_chemical
     label: Simple_chemical
